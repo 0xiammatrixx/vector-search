@@ -37,17 +37,17 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/dynamic-art-curation-assistant.git
-   cd dynamic-art-curation-assistant
+   git clone https://github.com/0xiammatrixx/vector-search.git
+   cd vector-search
    ```
 
 2. **Set Up SerpAPI Key**:
-   Replace the placeholder `SERP_API_KEY` with your own key in the script.
+   Replace the placeholder `SERP_API_KEY` with your own key in the script(not necessary).
 
 3. **Run the App**:
    Use the following command to launch the app:
    ```bash
-   python app.py
+   python3 text-to-image.py
    ```
 
 4. **Access the App**:
@@ -83,7 +83,7 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 - The youtube video functionality also didnt respond for unknown reasons, i found another way to implement it using something like this, but for some reason, it created errors in my display even though the youtube links were showing:
   
 ```python  
-YOUTUBE_API_KEY = "AIzaSyCJCavrTsQmdlilAxmuo0NlCcUCwDb0RbU"
+YOUTUBE_API_KEY = "AIzaSyCJCavrTs******************"
 YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
 
 def search_youtube_videos(query, num_results=5):
