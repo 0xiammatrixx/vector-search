@@ -80,7 +80,8 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 
 ## Future Enhancements
 - The functionality of the personalized feed from upvotes and downvotes seemed to be having issues in filtering images that can be displayed by gradio.
-- The youtube video functionality also didnt respond for unknown reasons, i found another way using something like this:
+- The youtube video functionality also didnt respond for unknown reasons, i found another way to implement it using something like this, but for some reason, it created errors in my display even though the youtube links were showing:
+  
 ```python  
 YOUTUBE_API_KEY = "AIzaSyCJCavrTsQmdlilAxmuo0NlCcUCwDb0RbU"
 YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
@@ -122,7 +123,7 @@ def display_videos(query, num_videos):
         # Display video titles and links
         return gr.Markdown('\n'.join([f"[{title}]({url})" for title, url in videos])), ""
 ```
-- The project can be forked and prope changes or improvements made to correct these faults, it would be deeply appreciated.
+- The project can be forked and proper changes or improvements made to correct these faults, it would be deeply appreciated.
 
 ---
 
