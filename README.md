@@ -63,7 +63,7 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 ## Screenshots
 
 ### Main Search Interface:
-![Main Search Interface](./screenshots/search_interface.png)
+![Main Search Interface](./assets/Screenshot(295).png)
 
 ### Personalized Feed:
 ![Personalized Feed](./screenshots/personalized_feed.png)
