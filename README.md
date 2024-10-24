@@ -51,7 +51,7 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
    ```
 
 4. **Access the App**:
-   Open the browser at the local URL provided by Gradio (usually `http://localhost:7860/`).
+   Open the browser at the local URL provided by Gradio (usually `http://localhost:7860/`). Make sure to make the URL public.
 
 ### External APIs & Dependencies:
 - **SerpAPI**: Used for retrieving images from Google Image Search.
