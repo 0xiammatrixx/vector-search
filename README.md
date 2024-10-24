@@ -26,7 +26,7 @@ This project is a **Dynamic Art Curation Assistant** that provides a real-time s
 
 ### Prerequisites:
 - Python 3.8 or higher.
-- [SerpAPI](https://serpapi.com/) API key (replace the placeholder in the code with your actual API key).
+- [SerpAPI](https://serpapi.com/) API key (not necessary).
 - Install the following dependencies:
 
 ```bash
