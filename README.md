@@ -79,7 +79,7 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 - **Pagination**: Incremental page loads ensure that only required data is fetched at each step, reducing memory usage.
 
 ## Future Enhancements
-- The functionality of the personalized feed from upvotes and downvotes seemed to be having issues in filtering imges that can be displayed by gradio.
+- The functionality of the personalized feed from upvotes and downvotes seemed to be having issues in filtering images that can be displayed by gradio.
 - The youtube video functionality also didnt respond for unknown reasons, i found another way using something like this:
 ```python  
 YOUTUBE_API_KEY = "AIzaSyCJCavrTsQmdlilAxmuo0NlCcUCwDb0RbU"
