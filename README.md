@@ -65,12 +65,6 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 ### Main Search Interface:
 ![Main Search Interface](./assets/interface.png)
 
-### Personalized Feed:
-![Personalized Feed](./screenshots/personalized_feed.png)
-
-### Description and Audio Output:
-![Description and Audio](./screenshots/description_audio.png)
-
 ## Optimizations
 
 ### Performance Metrics:
@@ -85,8 +79,50 @@ pip install requests gradio transformers torch pillow gtts youtubesearchpython s
 - **Pagination**: Incremental page loads ensure that only required data is fetched at each step, reducing memory usage.
 
 ## Future Enhancements
-- Add a feature for **batch feedback** to allow users to upvote/downvote multiple images at once.
-- Include **user accounts** for saving personalized feeds across sessions.
+- The functionality of the personalized feed from upvotes and downvotes seemed to be having issues in filtering imges that can be displayed by gradio.
+- The youtube video functionality also didnt respond for unknown reasons, i found another way using something like this:
+```python  
+YOUTUBE_API_KEY = "AIzaSyCJCavrTsQmdlilAxmuo0NlCcUCwDb0RbU"
+YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
+
+def search_youtube_videos(query, num_results=5):
+    # YouTube API search parameters
+    params = {
+        'part': 'snippet',
+        'q': query,
+        'key': YOUTUBE_API_KEY,
+        'type': 'video',
+        'maxResults': num_results
+    }
+
+    # Make request to YouTube API
+    response = requests.get(YOUTUBE_SEARCH_URL, params=params)
+
+    # Check if the response is successful
+    if response.status_code == 200:
+        video_results = response.json().get('items', [])
+        video_links = []
+
+        # Parse results
+        for video in video_results:
+            video_id = video['id']['videoId']
+            video_title = video['snippet']['title']
+            video_url = f"https://www.youtube.com/watch?v={video_id}"
+            video_links.append((video_title, video_url))
+
+        return video_links
+    else:
+        return f"Error: {response.status_code}"
+
+def display_videos(query, num_videos):
+    videos = search_youtube_videos(query, num_videos)
+    if isinstance(videos, str):  # Handle errors
+        return [], videos
+    else:
+        # Display video titles and links
+        return gr.Markdown('\n'.join([f"[{title}]({url})" for title, url in videos])), ""
+```
+- The project can be forked and prope changes or improvements made to correct these faults, it would be deeply appreciated.
 
 ---
 
